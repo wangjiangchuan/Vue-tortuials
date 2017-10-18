@@ -4,9 +4,10 @@
     <img src="./assets/logo.png">
     <!-- <h1>{{ msg }}</h1> -->
     <!-- <app-shits v-bind:shits='shits'></app-shits> -->
-    <component v-bind:is='whichform'></component>
+    <!-- <component v-bind:is='whichform'></component>
     <button type="button" name="button" v-on:click='chooseFormOne()'>Choose Form One</button>
-    <button type="button" name="button" v-on:click='chooseFormTwo()'>Choose Form Two</button>
+    <button type="button" name="button" v-on:click='chooseFormTwo()'>Choose Form Two</button> -->
+    <blog-add></blog-add>
     <app-footer v-bind:title='title'></app-footer>
   </div>
 </template>
@@ -17,6 +18,7 @@ import Footer from './components/footer.vue'
 import Shits from './components/shits.vue'
 import FormOne from './components/form-one.vue'
 import FormTwo from './components/form-two.vue'
+import BlogAdd from './components/blog-add.vue'
 export default {
   name: 'app',
   data () {
@@ -40,6 +42,7 @@ export default {
     'app-shits': Shits,
     'form-one': FormOne,
     'form-two': FormTwo,
+    'blog-add': BlogAdd,
   },
   methods: {
     updateTitle: function(changedTitle) {

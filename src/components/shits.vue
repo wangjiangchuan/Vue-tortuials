@@ -29,7 +29,7 @@
   }
 </script>
 
-<style>
+<style scoped>
 #shits{
   width: 100%;
   max-width: 1200px;
