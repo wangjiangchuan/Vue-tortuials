@@ -21,7 +21,7 @@ export const store = new Vuex.Store({
         var data = {
           name: '**' + shit.name + '**',
           price: shit.price / 2
-        }
+        };
         //console.log(data);
         return data;
       });
@@ -29,10 +29,15 @@ export const store = new Vuex.Store({
     }
   },
   mutations: {
-    reducePrice:state => {
+    reducePrice:(state, amount) => {
       state.shits.forEach(shit => {
-        shit.price -= 1;
-      })
+        shit.price -= amount;
+      });
+    }
+  },
+  actions: {
+    reducePrice:(context, amount) => {
+      context.commit('reducePrice', amount);
     }
   }
 })

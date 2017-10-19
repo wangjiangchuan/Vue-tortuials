@@ -8,7 +8,7 @@
         <button type="button" name="button" v-on:click='deleteShit()'></button>
       </li>
     </ul>
-    <button type="button" name="reducePrice" v-on:click='reducePrice()'>Reduce Price</button>
+    <button type="button" name="reducePrice" v-on:click='reducePrice(4)'>Reduce Price</button>
   </div>
 </template>
 
@@ -34,11 +34,12 @@ export default {
     deleteShit: function() {
       this.$store.state.shits.pop();
     },
-    reducePrice: function() {
+    reducePrice: function(amount) {
       // if we do the mutations here directly on the origin value,
       //then there will be errors when strict mode in turned on in store.js using vuex
       //this.$store.mutations.reducePrice;
-      this.$store.commit('reducePrice');
+      // this.$store.commit('reducePrice');
+      this.$store.dispatch('reducePrice', amount);
     }
   }
 }
