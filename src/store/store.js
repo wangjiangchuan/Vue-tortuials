@@ -27,5 +27,12 @@ export const store = new Vuex.Store({
       });
       return halfprice;
     }
+  },
+  mutations: {
+    reducePrice:state => {
+      state.shits.forEach(shit => {
+        shit.price -= 1;
+      })
+    }
   }
 })
