@@ -2,8 +2,8 @@
   <div v-theme:column="'narrow'" id="show-blogs">
     <h2>Show all blogs</h2>
     <div class="single-blog" v-for='post in posts'>
-      <h2 v-rainbow class="blog-title">{{ post.title }}</h2>
-      <p class="blog-body">{{ post.body }}</p>
+      <h2 v-rainbow class="blog-title">{{ post.title | touppercase }}</h2>
+      <p class="blog-body">{{ post.body |  snippet }}</p>
     </div>
   </div>
 </template>

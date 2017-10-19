@@ -18,8 +18,6 @@ Vue.directive('rainbow', {
 // in this example, we pass some value when element use v-theme.
 Vue.directive('theme', {
   bind(el, binding, vnode) {
-
-
     // directive can also pass some arguments, just like v-on:click, click is one argument.
     if (binding.arg == 'column') {
       if (binding.value == 'wide') {
@@ -31,6 +29,14 @@ Vue.directive('theme', {
       }
     }
   }
+})
+
+Vue.filter('snippet', function(value) {
+  return value.slice(0, 100) + "...";
+})
+
+Vue.filter('touppercase', function(value) {
+  return value.toUpperCase();
 })
 
 new Vue({
