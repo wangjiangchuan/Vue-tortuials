@@ -2,9 +2,10 @@
   <div id="product-list-one">
     <h2>Which shit do you perfer?</h2>
     <ul>
-      <li v-for="product in products">
+      <li v-for="product in halfprice">
         <span name='name'>{{ product.name }}</span>
         <span name='price'>${{ product.price }}</span>
+        <button type="button" name="button" v-on:click='deleteShit()'></button>
       </li>
     </ul>
   </div>
@@ -23,8 +24,16 @@ export default {
   computed: {
     products() {
       return this.$store.state.shits;
+    },
+    halfprice() {
+      return this.$store.getters.halfprice;
     }
   },
+  methods: {
+    deleteShit: function() {
+      this.$store.state.shits.pop();
+    }
+  }
 }
 </script>
 
