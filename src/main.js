@@ -1,10 +1,20 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueResource from 'vue-resource'
+//import vue router
+import VueRouter from 'vue-router'
+
+import { store } from './store/store'
 
 export const bus = new Vue();
 
 Vue.use(VueResource)
+Vue.use(VueRouter)
+
+import Routes from './routes.js'
+var router = new VueRouter({
+  routes: Routes,
+})
 
 // directives also have life cycles
 // Vue.directive('rainbow', {
@@ -33,7 +43,9 @@ Vue.use(VueResource)
 
 new Vue({
   el: '#app',
-  render: h => h(App)
+  store: store,
+  render: h => h(App),
+  router: router
 })
 
 // Vue.filter('snippet', function(value) {

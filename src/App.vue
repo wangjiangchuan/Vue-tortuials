@@ -8,8 +8,11 @@
     <button type="button" name="button" v-on:click='chooseFormOne()'>Choose Form One</button>
     <button type="button" name="button" v-on:click='chooseFormTwo()'>Choose Form Two</button> -->
     <!-- <blog-add></blog-add> -->
-    <show-blog></show-blog>
-    <list-title></list-title>
+    <!-- <show-blog></show-blog>
+    <list-title></list-title> -->
+    <!-- <router-view></router-view> -->
+    <product-list-one></product-list-one>
+    <product-list-two></product-list-two>
     <app-footer v-bind:title='title'></app-footer>
   </div>
 </template>
@@ -23,6 +26,8 @@ import FormTwo from './components/form-two.vue'
 import BlogAdd from './components/blog-add.vue'
 import ShowBlog from './components/show-blog.vue'
 import ListTile from './components/list-title.vue'
+import ProductsListOne from './components/product-one.vue'
+import ProductsListTwo from './components/product-two.vue'
 export default {
   name: 'app',
   data () {
@@ -30,14 +35,14 @@ export default {
       msg: 'Welcome to Your Holly Shit!',
       title: 'Holly Shits',
       whichform: 'form-one',
-      shits: [
-        {name: 'Ryu', speciality: 'Vue Components', show: false},
-        {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
-        {name: 'Hitoshi', speciality: 'Click Events', show: false},
-        {name: 'Tango', speciality: 'Conditionals', show: false},
-        {name: 'Kami', speciality: 'Webpack', show: false},
-        {name: 'Yoshi', speciality: 'Data Design', show: false},
-      ]
+      // shits: [
+      //   {name: 'Ryu', speciality: 'Vue Components', show: false, price: 200},
+      //   {name: 'Crystal', speciality: 'HTML Wizardry', show: false, price: 100},
+      //   {name: 'Hitoshi', speciality: 'Click Events', show: false, price: 50},
+      //   {name: 'Tango', speciality: 'Conditionals', show: false, price: 2400},
+      //   {name: 'Kami', speciality: 'Webpack', show: false, price: 1200},
+      //   {name: 'Yoshi', speciality: 'Data Design', show: false, price: 900},
+      // ]
     }
   },
   components: {
@@ -49,6 +54,8 @@ export default {
     'blog-add': BlogAdd,
     'show-blog': ShowBlog,
     'list-title': ListTile,
+    'product-list-one': ProductsListOne,
+    'product-list-two': ProductsListTwo
   },
   methods: {
     updateTitle: function(changedTitle) {
