@@ -1,7 +1,7 @@
 <template>
   <div id="add-blog">
     <h3>Add a new Blog Post</h3>
-    <form>
+    <form v-show='!result'>
       <label>Blog Title:</label>
       <input type="text" name="blog-name" v-model.lazy='blog.title' required>
       <label>Blog Content:</label>
@@ -22,7 +22,12 @@
           <option v-for='author in authors'>{{ author }}</option>
         </select>
       </div>
+      <button type="button" name="submit" v-on:click='post'>Add Blog</button>
     </form>
+    <div id="result">
+      <p v-show='result'>Thanks to adding your post!</p>
+      <p v-show='!result'>Sorry, failed to upload your post!</p>
+    </div>
     <div id="preview">
       <h3>Preview Blog</h3>
       <p>Blog Title:{{ blog.title }}</p>
@@ -51,10 +56,21 @@
         blogTitle: '',
         blogContent: '',
         authors: ['Sally', 'Ryu', 'Snow White', 'Siri'],
+        result: false,
       }
     },
     methods: {
-
+      post: function() {
+        this.$http.post('https://jsonplaceholder.typicode.com/posts', {
+          title: this.blog.title,
+          content: this.blog.content,
+          categories: this.blog.categories,
+          author: this.blog.author,
+        }).then(function(data) {
+          console.log(data);
+          this.result = true;
+        });
+      }
     },
     components: {
 

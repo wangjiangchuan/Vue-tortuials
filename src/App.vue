@@ -7,7 +7,8 @@
     <!-- <component v-bind:is='whichform'></component>
     <button type="button" name="button" v-on:click='chooseFormOne()'>Choose Form One</button>
     <button type="button" name="button" v-on:click='chooseFormTwo()'>Choose Form Two</button> -->
-    <blog-add></blog-add>
+    <!-- <blog-add></blog-add> -->
+    <show-blog></show-blog>
     <app-footer v-bind:title='title'></app-footer>
   </div>
 </template>
@@ -19,6 +20,7 @@ import Shits from './components/shits.vue'
 import FormOne from './components/form-one.vue'
 import FormTwo from './components/form-two.vue'
 import BlogAdd from './components/blog-add.vue'
+import ShowBlog from './components/show-blog.vue'
 export default {
   name: 'app',
   data () {
@@ -43,6 +45,7 @@ export default {
     'form-one': FormOne,
     'form-two': FormTwo,
     'blog-add': BlogAdd,
+    'show-blog': ShowBlog,
   },
   methods: {
     updateTitle: function(changedTitle) {
