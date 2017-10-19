@@ -4,7 +4,6 @@
     <input type="text" class="search-style" v-model='search' placeholder='search in blogs'>
     <div class="single-blog" v-for='post in searchBlogs'>
       <h2 v-rainbow class="blog-title">{{ post.title | touppercase }}</h2>
-      <p class="blog-body">{{ post.body |  snippet }}</p>
     </div>
   </div>
 </template>
@@ -36,10 +35,6 @@ export default {
     'touppercase': function(value) {
       return value.toUpperCase();
     },
-
-    'snippet': function(value) {
-      return value.slice(0, 100) + "...";
-    }
   },
   directives: {
     'rainbow': {
@@ -70,17 +65,19 @@ export default {
 
 <style media="screen" scoped>
 #show-blogs .single-blog{
-  background: #ccc;
+  background: #eee;
   height: 50%;
 }
 #show-blogs .single-blog .blog-title {
   background: #eee;
   font-size: 20px;
-  padding: 10px;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 0px;
 }
-#show-blogs .single-blog .blog-body {
+/*#show-blogs .single-blog .blog-body {
   padding-bottom: 20px;
-}
+}*/
 #show-blogs .search-style {
   width: 99%;
   height: 30px;

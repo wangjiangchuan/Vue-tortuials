@@ -9,6 +9,7 @@
     <button type="button" name="button" v-on:click='chooseFormTwo()'>Choose Form Two</button> -->
     <!-- <blog-add></blog-add> -->
     <show-blog></show-blog>
+    <list-title></list-title>
     <app-footer v-bind:title='title'></app-footer>
   </div>
 </template>
@@ -21,6 +22,7 @@ import FormOne from './components/form-one.vue'
 import FormTwo from './components/form-two.vue'
 import BlogAdd from './components/blog-add.vue'
 import ShowBlog from './components/show-blog.vue'
+import ListTile from './components/list-title.vue'
 export default {
   name: 'app',
   data () {
@@ -46,6 +48,7 @@ export default {
     'form-two': FormTwo,
     'blog-add': BlogAdd,
     'show-blog': ShowBlog,
+    'list-title': ListTile,
   },
   methods: {
     updateTitle: function(changedTitle) {
